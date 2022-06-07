@@ -1,0 +1,409 @@
+<!-- Truncated version of https://community.workday.com/sites/default/files/file-hosting/productionapi/Financial_Management/v38.1/Financial_Management.wsdl -->
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="Financial_Management" targetNamespace="urn:com.workday/bsvc/Financial_Management" xmlns:httpbind="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mimebind="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:nyw="urn:com.netyourwork/aod" xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wd="urn:com.workday/bsvc" xmlns:wd-wsdl="urn:com.workday/bsvc/Financial_Management" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<wsdl:documentation>documentation</wsdl:documentation>
+	<wsdl:types>
+		<xsd:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="urn:com.workday/bsvc">
+			<xsd:attribute name="version" type="xsd:string" wd:fixed="v38.0"/>
+			<xsd:element name="Validation_Fault" type="wd:Validation_FaultType"/>
+			<xsd:element name="Processing_Fault" type="wd:Processing_FaultType"/>
+			<xsd:element name="Submit_Accounting_Journal_Request" type="wd:Submit_Accounting_Journal_RequestType"/>
+			<xsd:element name="Submit_Accounting_Journal_Response" type="wd:Submit_Accounting_Journal_ResponseType"/>
+			<xsd:element name="Currency_GetAll" type="wd:Currency_GetAllType"/>
+			<xsd:element name="Currency_List" type="wd:Currency_ListType"/>
+			<xsd:element name="Workday_Common_Header" type="wd:Workday_Common_HeaderType"/>
+			<!-- ... -->
+			<xsd:simpleType name="CurrencyEnumeration">
+				<xsd:restriction base="xsd:string">
+					<xsd:annotation>
+						<xsd:appinfo>
+							<wd:enumeration value="ADF"/>
+							<wd:enumeration value="ADP"/>
+							<wd:enumeration value="AED"/>
+							<wd:enumeration value="AFA"/>
+							<wd:enumeration value="AFN"/>
+							<wd:enumeration value="ALK"/>
+							<wd:enumeration value="ALL"/>
+							<wd:enumeration value="AMD"/>
+							<wd:enumeration value="ANG"/>
+							<wd:enumeration value="AOA"/>
+							<wd:enumeration value="AOR"/>
+							<wd:enumeration value="ARS"/>
+							<wd:enumeration value="ATS"/>
+							<wd:enumeration value="AUD"/>
+							<wd:enumeration value="AWG"/>
+							<wd:enumeration value="AZM"/>
+							<wd:enumeration value="AZN"/>
+							<wd:enumeration value="BAM"/>
+							<wd:enumeration value="BBD"/>
+							<wd:enumeration value="BDT"/>
+							<wd:enumeration value="BEF"/>
+							<wd:enumeration value="BGN"/>
+							<wd:enumeration value="BHD"/>
+							<wd:enumeration value="BIF"/>
+							<wd:enumeration value="BMD"/>
+							<wd:enumeration value="BND"/>
+							<wd:enumeration value="BOB"/>
+							<wd:enumeration value="BOV"/>
+							<wd:enumeration value="BRL"/>
+							<wd:enumeration value="BSD"/>
+							<wd:enumeration value="BTN"/>
+							<wd:enumeration value="BWP"/>
+							<wd:enumeration value="BYN"/>
+							<wd:enumeration value="BYR"/>
+							<wd:enumeration value="BZD"/>
+							<wd:enumeration value="CAD"/>
+							<wd:enumeration value="CDF"/>
+							<wd:enumeration value="CHE"/>
+							<wd:enumeration value="CHF"/>
+							<wd:enumeration value="CHW"/>
+							<wd:enumeration value="CLF"/>
+							<wd:enumeration value="CLP"/>
+							<wd:enumeration value="CNH"/>
+							<wd:enumeration value="CNY"/>
+							<wd:enumeration value="COP"/>
+							<wd:enumeration value="COU"/>
+							<wd:enumeration value="CRC"/>
+							<wd:enumeration value="CSD"/>
+							<wd:enumeration value="CUC"/>
+							<wd:enumeration value="CUP"/>
+							<wd:enumeration value="CVE"/>
+							<wd:enumeration value="CYP"/>
+							<wd:enumeration value="CZK"/>
+							<wd:enumeration value="DEM"/>
+							<wd:enumeration value="DJF"/>
+							<wd:enumeration value="DKK"/>
+							<wd:enumeration value="DOP"/>
+							<wd:enumeration value="DZD"/>
+							<wd:enumeration value="ECS"/>
+							<wd:enumeration value="ECV"/>
+							<wd:enumeration value="EEK"/>
+							<wd:enumeration value="EGP"/>
+							<wd:enumeration value="ERN"/>
+							<wd:enumeration value="ESP"/>
+							<wd:enumeration value="ETB"/>
+							<wd:enumeration value="EUR"/>
+							<wd:enumeration value="FIM"/>
+							<wd:enumeration value="FJD"/>
+							<wd:enumeration value="FKP"/>
+							<wd:enumeration value="FRF"/>
+							<wd:enumeration value="GBP"/>
+							<wd:enumeration value="GEL"/>
+							<wd:enumeration value="GHC"/>
+							<wd:enumeration value="GHS"/>
+							<wd:enumeration value="GIP"/>
+							<wd:enumeration value="GMD"/>
+							<wd:enumeration value="GNF"/>
+							<wd:enumeration value="GRD"/>
+							<wd:enumeration value="GTQ"/>
+							<wd:enumeration value="GWP"/>
+							<wd:enumeration value="GYD"/>
+							<wd:enumeration value="HKD"/>
+							<wd:enumeration value="HNL"/>
+							<wd:enumeration value="HRK"/>
+							<wd:enumeration value="HTG"/>
+							<wd:enumeration value="HUF"/>
+							<wd:enumeration value="IDR"/>
+							<wd:enumeration value="IEP"/>
+							<wd:enumeration value="ILS"/>
+							<wd:enumeration value="INR"/>
+							<wd:enumeration value="IQD"/>
+							<wd:enumeration value="IRR"/>
+							<wd:enumeration value="ISK"/>
+							<wd:enumeration value="ITL"/>
+							<wd:enumeration value="JMD"/>
+							<wd:enumeration value="JOD"/>
+							<wd:enumeration value="JPY"/>
+							<wd:enumeration value="KES"/>
+							<wd:enumeration value="KGS"/>
+							<wd:enumeration value="KHR"/>
+							<wd:enumeration value="KMF"/>
+							<wd:enumeration value="KPW"/>
+							<wd:enumeration value="KRW"/>
+							<wd:enumeration value="KWD"/>
+							<wd:enumeration value="KYD"/>
+							<wd:enumeration value="KZT"/>
+							<wd:enumeration value="LAK"/>
+							<wd:enumeration value="LBP"/>
+							<wd:enumeration value="LKR"/>
+							<wd:enumeration value="LRD"/>
+							<wd:enumeration value="LSL"/>
+							<wd:enumeration value="LTL"/>
+							<wd:enumeration value="LUF"/>
+							<wd:enumeration value="LVL"/>
+							<wd:enumeration value="LYD"/>
+							<wd:enumeration value="MAD"/>
+							<wd:enumeration value="MCF"/>
+							<wd:enumeration value="MDL"/>
+							<wd:enumeration value="MGA"/>
+							<wd:enumeration value="MGF"/>
+							<wd:enumeration value="MKD"/>
+							<wd:enumeration value="MMK"/>
+							<wd:enumeration value="MNT"/>
+							<wd:enumeration value="MOP"/>
+							<wd:enumeration value="MRO"/>
+							<wd:enumeration value="MRU"/>
+							<wd:enumeration value="MTL"/>
+							<wd:enumeration value="MUR"/>
+							<wd:enumeration value="MVR"/>
+							<wd:enumeration value="MWK"/>
+							<wd:enumeration value="MXN"/>
+							<wd:enumeration value="MXV"/>
+							<wd:enumeration value="MYR"/>
+							<wd:enumeration value="MZM"/>
+							<wd:enumeration value="MZN"/>
+							<wd:enumeration value="NAD"/>
+							<wd:enumeration value="NGN"/>
+							<wd:enumeration value="NIO"/>
+							<wd:enumeration value="NLG"/>
+							<wd:enumeration value="NOK"/>
+							<wd:enumeration value="NPR"/>
+							<wd:enumeration value="NZD"/>
+							<wd:enumeration value="OMR"/>
+							<wd:enumeration value="PAB"/>
+							<wd:enumeration value="PEN"/>
+							<wd:enumeration value="PGK"/>
+							<wd:enumeration value="PHP"/>
+							<wd:enumeration value="PKR"/>
+							<wd:enumeration value="PLN"/>
+							<wd:enumeration value="PTE"/>
+							<wd:enumeration value="PYG"/>
+							<wd:enumeration value="QAR"/>
+							<wd:enumeration value="ROL"/>
+							<wd:enumeration value="RON"/>
+							<wd:enumeration value="RSD"/>
+							<wd:enumeration value="RUB"/>
+							<wd:enumeration value="RWF"/>
+							<wd:enumeration value="SAR"/>
+							<wd:enumeration value="SBD"/>
+							<wd:enumeration value="SCR"/>
+							<wd:enumeration value="SDD"/>
+							<wd:enumeration value="SDG"/>
+							<wd:enumeration value="SEK"/>
+							<wd:enumeration value="SGD"/>
+							<wd:enumeration value="SHP"/>
+							<wd:enumeration value="SIT"/>
+							<wd:enumeration value="SKK"/>
+							<wd:enumeration value="SLL"/>
+							<wd:enumeration value="SML"/>
+							<wd:enumeration value="SOS"/>
+							<wd:enumeration value="SRD"/>
+							<wd:enumeration value="SRG"/>
+							<wd:enumeration value="SSP"/>
+							<wd:enumeration value="STD"/>
+							<wd:enumeration value="STN"/>
+							<wd:enumeration value="SVC"/>
+							<wd:enumeration value="SYP"/>
+							<wd:enumeration value="SZL"/>
+							<wd:enumeration value="THB"/>
+							<wd:enumeration value="TJR"/>
+							<wd:enumeration value="TJS"/>
+							<wd:enumeration value="TMM"/>
+							<wd:enumeration value="TMT"/>
+							<wd:enumeration value="TND"/>
+							<wd:enumeration value="TOP"/>
+							<wd:enumeration value="TRL"/>
+							<wd:enumeration value="TRY"/>
+							<wd:enumeration value="TTD"/>
+							<wd:enumeration value="TWD"/>
+							<wd:enumeration value="TZS"/>
+							<wd:enumeration value="UAH"/>
+							<wd:enumeration value="UGX"/>
+							<wd:enumeration value="USD"/>
+							<wd:enumeration value="UYI"/>
+							<wd:enumeration value="UYU"/>
+							<wd:enumeration value="UZS"/>
+							<wd:enumeration value="VAL"/>
+							<wd:enumeration value="VEB"/>
+							<wd:enumeration value="VEF"/>
+							<wd:enumeration value="VES"/>
+							<wd:enumeration value="VND"/>
+							<wd:enumeration value="VUV"/>
+							<wd:enumeration value="WST"/>
+							<wd:enumeration value="XAF"/>
+							<wd:enumeration value="XCD"/>
+							<wd:enumeration value="XEU"/>
+							<wd:enumeration value="XFO"/>
+							<wd:enumeration value="XOF"/>
+							<wd:enumeration value="XPF"/>
+							<wd:enumeration value="YER"/>
+							<wd:enumeration value="YUM"/>
+							<wd:enumeration value="ZAR"/>
+							<wd:enumeration value="ZMK"/>
+							<wd:enumeration value="ZMW"/>
+							<wd:enumeration value="ZWD"/>
+							<wd:enumeration value="ZWL"/>
+						</xsd:appinfo>
+					</xsd:annotation>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="Validation_FaultType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="Validation_Error" type="wd:Validation_ErrorType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Processing_FaultType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="0" name="Detail_Message" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Validation_ErrorType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="0" name="Message" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="Detail_Message" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="Xpath" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Currency_ListType">
+				<xsd:annotation>
+					<xsd:documentation>Response element for GetAll Currencies WS</xsd:documentation>
+				</xsd:annotation>
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="Currency_Data" type="wd:Currency_DataType">
+						<xsd:annotation>
+							<xsd:documentation>Information about all available currencies</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+				<xsd:attribute ref="wd:version"/> 
+			</xsd:complexType>
+			<xsd:complexType name="Currency_DataType">
+				<xsd:annotation>
+					<xsd:documentation>Information associated with a given currency</xsd:documentation>
+				</xsd:annotation>
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="0" name="WID">
+						<xsd:annotation>
+							<xsd:documentation>Workday ID</xsd:documentation>
+						</xsd:annotation>
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:string">
+								<xsd:maxLength value="36"/>
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="Currency_Description" type="xsd:string">
+						<xsd:annotation>
+							<xsd:documentation>Description of currency</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="Currency_ID" type="wd:CurrencyEnumeration">
+						<xsd:annotation>
+							<xsd:documentation>The preferred Currency for the contract pay rate.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="Currency_Numeric_Code" type="xsd:string">
+						<xsd:annotation>
+							<xsd:documentation>Numeric code which is usually defined using the ISO 3166 numeric code</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="Currency_Symbol" type="xsd:string">
+						<xsd:annotation>
+							<xsd:documentation>Symbol associated with currency displayed in Unicode</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="Currency_Retired" type="xsd:boolean">
+						<xsd:annotation>
+							<xsd:documentation>Status to indicate whether the currency is classified as retired.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="Currency_Precision">
+						<xsd:annotation>
+							<xsd:documentation>Decimal precision for currency amounts</xsd:documentation>
+						</xsd:annotation>
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:decimal">
+								<xsd:totalDigits value="1"/>
+								<xsd:minInclusive value="0"/>
+								<xsd:fractionDigits value="0"/>
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="Is_Precision_Overridden" type="xsd:boolean">
+						<xsd:annotation>
+							<xsd:documentation>Returns true if a precision override is defined.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="Delivered_Currency_Precision">
+						<xsd:annotation>
+							<xsd:documentation>Delivered precision defined by Workday based on ISO standards.</xsd:documentation>
+						</xsd:annotation>
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:decimal">
+								<xsd:totalDigits value="1"/>
+								<xsd:minInclusive value="0"/>
+								<xsd:fractionDigits value="0"/>
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="Override_Currency_Precision">
+						<xsd:annotation>
+							<xsd:documentation>Precision override defined on the tenanted level.</xsd:documentation>
+						</xsd:annotation>
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:decimal">
+								<xsd:totalDigits value="1"/>
+								<xsd:minInclusive value="0"/>
+								<xsd:fractionDigits value="0"/>
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Submit_Accounting_Journal_RequestType">
+				<!-- ... -->
+			</xsd:complexType>
+			<xsd:complexType name="Submit_Accounting_Journal_ResponseType">
+				<!-- ... -->
+			</xsd:complexType>
+		</xsd:schema>
+	</wsdl:types>
+	<!-- ... -->
+	<wsdl:message name="Workday_Common_HeaderMsg">
+		<wsdl:part element="wd:Workday_Common_Header" name="header"/>
+	</wsdl:message>
+	<wsdl:message name="Submit_Accounting_Journal_RequestInputMsg">
+		<wsdl:part element="wd:Submit_Accounting_Journal_Request" name="body"/>
+	</wsdl:message>
+	<wsdl:message name="Submit_Accounting_Journal_ResponseOutputMsg">
+		<wsdl:part element="wd:Submit_Accounting_Journal_Response" name="body"/>
+	</wsdl:message>
+	<!-- ... -->
+	<wsdl:portType name="Financial_ManagementPort">
+		<wsdl:documentation>documentation</wsdl:documentation>
+		<wsdl:operation name="Submit_Accounting_Journal">
+			<wsdl:documentation>documentation
+				
+				<wd:contextualSecurity>No Information</wd:contextualSecurity></wsdl:documentation>
+			<wsdl:input message="wd-wsdl:Submit_Accounting_Journal_RequestInputMsg" name="Submit_Accounting_JournalInput"/>
+			<wsdl:output message="wd-wsdl:Submit_Accounting_Journal_ResponseOutputMsg" name="Submit_Accounting_JournalOutput"/>
+			<wsdl:fault message="wd-wsdl:Validation_FaultMsg" name="Validation_Fault"/>
+			<wsdl:fault message="wd-wsdl:Processing_FaultMsg" name="Processing_Fault"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<!-- ... -->
+	<wsdl:binding name="Financial_ManagementBinding" type="wd-wsdl:Financial_ManagementPort">
+		<soapbind:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="Submit_Accounting_Journal">
+			<soapbind:operation style="document"/>
+			<wsdl:input name="Submit_Accounting_JournalInput">
+				<soapbind:body use="literal"/>
+				<soapbind:header message="wd-wsdl:Workday_Common_HeaderMsg" part="header" use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="Submit_Accounting_JournalOutput">
+				<soapbind:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="Processing_Fault">
+				<soapbind:fault name="Processing_Fault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="Validation_Fault">
+				<soapbind:fault name="Validation_Fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="Financial_ManagementService">
+		<wsdl:port binding="wd-wsdl:Financial_ManagementBinding" name="Financial_Management">
+			<soapbind:address location="Financial_Management"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

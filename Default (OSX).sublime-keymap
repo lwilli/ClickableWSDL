@@ -1,0 +1,3 @@
+[
+    { "keys": ["super+option+enter"], "command": "navigate_to_link_under_cursor" }
+]

@@ -78,23 +78,26 @@ class ClickableHighlighter(sublime_plugin.EventListener):
     highlight_semaphore = threading.Semaphore()
 
     def on_activated(self, view: View):
-        self.update_clickable_highlights(view)
+        if is_xml_file(view):
+            self.update_clickable_highlights(view)
 
     # Blocking handlers for ST2
     def on_load(self, view: View):
-        if sublime.version() < '3000':
+        if sublime.version() < '3000' and is_xml_file(view):
             self.update_clickable_highlights(view)
 
     def on_modified(self, view: View):
-        if sublime.version() < '3000':
+        if sublime.version() < '3000' and is_xml_file(view):
             self.update_clickable_highlights(view)
 
     # Async listeners for ST3
     def on_load_async(self, view: View):
-        self.update_clickable_highlights_async(view)
+        if is_xml_file(view):
+            self.update_clickable_highlights_async(view)
 
     def on_modified_async(self, view: View):
-        self.update_clickable_highlights_async(view)
+        if is_xml_file(view):
+            self.update_clickable_highlights_async(view)
 
     def on_close(self, view: View):
         for map in [self.clickables_for_view, self.scopes_for_view, self.ignored_views]:
@@ -245,6 +248,9 @@ class ClickableHighlighter(sublime_plugin.EventListener):
 class NavigateToLinkUnderCursorCommand(sublime_plugin.TextCommand):
     """Finds the definition region for a given clickable string"""
 
+    def is_enabled(self):
+        return is_xml_file(self.view)
+
     def find_name_region(self, name: str, start_point: int) -> Region:
         return self.view.find("name=\"{}\"".format(name), start_point)
 
@@ -360,6 +366,15 @@ class KeyValue:
         return "{}={}".format(self.key, self.value)
 
 
+def is_xml_file(view: View) -> bool:
+    """Returns True if this view is an XML file."""
+    supported_syntaxes = ["XML", "HTML", "XSL"]
+    supported = view.syntax().name in supported_syntaxes
+    if not supported:
+        Logger.log_debug("Syntax '{}' is not supported".format(view.syntax().name))
+    return supported
+
+
 def get_clickable_region_from_reference_region(view: View, reference_region: Region) -> Region:
     """Shrink the region so we don't have the full 'type="wd:Validation_FaultType"' but instead just
     'wd:Validation_FaultType'"""
@@ -372,7 +387,7 @@ def get_clickable_region_from_reference_region(view: View, reference_region: Reg
     return clickable_region
 
 
-def get_element_name_containing_region(view: View, region: Region) -> NamespacedName:
+def get_element_name_containing_region(view: View, region: Region): # -> Optional[NamespacedName]
     """Gets the namespaced name of the xml element containing the given region"""
 
     next_point = view.find_by_class(region.begin(), False,

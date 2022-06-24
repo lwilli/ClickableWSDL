@@ -48,7 +48,13 @@ For example, to navigate the links using `super+option+enter`:
 ```
   
 ### Note on Performance
-To protect Sublime's performance, the plugin is automatically disabled if the document has more than 1000 clickable links. This can be configured via the `max_link_limit` settings option (see "Configuration" below).
+To protect Sublime's performance, the plugin is automatically disabled if the document has more than 1000 clickable links. This can be configured via the `max_clickable_limit` settings option. To configure this, go to `Preferences > Package Settings > Clickable WSDL > Settings - User` and set:
+
+```json
+{
+	"max_clickable_limit": 10000
+}
+```
 
 ### Note on Sublime Text 2  
 Unfortunately, in Sublime Text 2 the only way to underline a block of text is a hack with underlining empty regions, and there is no way to control its appearance. If you want, you can disable link highlighting by setting the option `highlight_urls` to false.  

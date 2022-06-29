@@ -14,6 +14,8 @@ class NamespacedName:
         parts = namespaced_name.split(':')
         if len(parts) < 2:
             Logger.log_warn("Expected a namespaced name, but got '{}'.".format(namespaced_name))
+            self.ns = None
+            self.name = None
         else:
             self.ns = parts[0]
             self.name = parts[1]

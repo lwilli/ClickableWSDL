@@ -456,20 +456,20 @@ class Logger:
 
     @classmethod
     def log_error(cls, message: str):
-        if cls.log_level <= LogLevel.Error:
+        if LogLevel.Error <= cls.log_level:
             print("[ERROR ClickableWsdl]: {}".format(message))
 
     @classmethod
     def log_warn(cls, message: str):
-        if cls.log_level <= LogLevel.Warn:
+        if LogLevel.Warn <= cls.log_level:
             print("[WARNING ClickableWsdl]: {}".format(message))
 
     @classmethod
     def log_info(cls, message: str):
-        if cls.log_level <= LogLevel.Info:
+        if LogLevel.Info <= cls.log_level:
             print("[INFO ClickableWsdl]: {}".format(message))
 
     @classmethod
     def log_debug(cls, message: str):
-        if cls.log_level <= LogLevel.Debug:
+        if LogLevel.Debug <= cls.log_level:
             print("[DEBUG ClickableWsdl]: {}".format(message))

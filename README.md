@@ -13,7 +13,7 @@ If you don't like using a mouse, you can also navigate them with a keyboard shor
 
 ## Installation
 
-For now, you need to manually install the package by downloading the [latest version](https://github.com/lwilli/ClickableWSDL/releases/latest) and dropping it in the packages directory (to get there, use Sublime's menu `Preferences > Browse Packages`).
+For now, you need to manually install the package by cloning this repo (or downloading the [latest release](https://github.com/lwilli/ClickableWSDL/releases/latest)) and dropping it in the packages directory. To get there, use Sublime's menu `Preferences > Browse Packages`.
 
 Once the [PR to add this to Package Control](https://github.com/lwilli/ClickableWSDL/releases/latest) is approved & merged, this we be available there for easier install. 
   

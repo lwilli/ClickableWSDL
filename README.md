@@ -13,9 +13,7 @@ If you don't like using a mouse, you can also navigate them with a keyboard shor
 
 ## Installation
 
-For now, you need to manually install the package by cloning this repo (or downloading the [latest release](https://github.com/lwilli/ClickableWSDL/releases/latest)) and dropping it in the packages directory. To get there, use Sublime's menu `Preferences > Browse Packages`.
-
-Once the [PR to add this to Package Control](https://github.com/lwilli/ClickableWSDL/releases/latest) is approved & merged, this we be available there for easier install. 
+Install via Sublime's Package Control: `Preferences > Package Control > Install Package`, search and select `Clickable WSDL`.
   
 > **Note:** you need to manually enable mouse and/or key bindings to make the links clickable/navigable. See [How to Configure Mouse Bindings](#how-to-configure-mouse-bindings) and [How to Configure Key Bindings](#how-to-configure-key-bindings) below.  
   

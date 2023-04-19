@@ -1,7 +1,7 @@
 
 # Clickable WSDL (and XSD)  
   
-A plugin for [Sublime Text 2 and 3](http://sublimetext.com) that turns WSDL and XSD types into clickable links!  
+A plugin for [Sublime Text 2, 3, and 4](http://sublimetext.com) that turns WSDL and XSD types into clickable links!  
   
 ![Screenshot of a clickable WSDL](./resources/ClickableWSDLDemo.gif)  
   

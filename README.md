@@ -1,5 +1,6 @@
 
 # Clickable WSDL (and XSD)  
+![Package Control Downloads](https://img.shields.io/packagecontrol/dt/Clickable%2520WSDL)
   
 A plugin for [Sublime Text](http://sublimetext.com) that turns WSDL and XSD types into clickable links!  
   
